@@ -60,27 +60,7 @@ Mike: You write code, Henning.
 
 Henning: I would start in a TDD/BDD fashion.
 
-Starts with an empty test case:
-
-```java
-import static org.assertj.core.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
-
-
-public class CartTest {
-    @Test
-    void givenX_whenY_thenZ() {
-        // given
-        
-        // when
-        
-        // then
-    }
-}
-```
-
-Henning then adds two first test cases:
+Starts with two first test cases that come directly out of EAKI-2 and -3:
 
 ```java
 import static org.assertj.core.api.Assertions.*;
@@ -117,15 +97,15 @@ public class CartTest {
 
 Henning then uses the IDE to generate code in the following order:
 
-- empty class Cart -> @Entity
+- empty class Cart -> `@Entity`
 - empty class Article -> another Entity
-- record ArticleName with a field "name"-> a @ValueObject
+- record ArticleName with a field "name"-> a `@ValueObject`
 - enum ArticleCategory -> @VO
 - Constant LIFESTYLE
 - class Article -> another Entity with a generated constructor
-- method Cart::put()
+- method `Cart::put()`
 - enum AddressType
-- constant HOME_ADDRESS
+- constant `HOME_ADDRESS`
 
 Mike interrupts: OK, Henning, you design behavior - method signatures.  I design data.  Let me show how these two go together.
 
